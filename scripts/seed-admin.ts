@@ -23,7 +23,6 @@ async function main() {
       name: 'Raveron Admin',
       email: email,
       passwordHash: passwordHash,
-      role: 'superadmin',
     },
   });
 

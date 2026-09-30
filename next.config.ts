@@ -5,10 +5,7 @@ const nextConfig: NextConfig = {
   reactStrictMode: true,
 
   // Hide the development indicator (the 'N' in the corner)
-  devIndicators: {
-    appIsrStatus: false,
-    buildActivity: false,
-  },
+  devIndicators: false,
 
   // Image optimization config
   images: {

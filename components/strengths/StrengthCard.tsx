@@ -11,7 +11,7 @@ interface StrengthCardProps {
 }
 
 export function StrengthCard({ strength, index = 0, dark = false }: StrengthCardProps) {
-  const IconComponent = (Icons as Record<string, Icons.LucideIcon>)[strength.icon] ?? Icons.CheckCircle;
+  const IconComponent = (Icons as unknown as Record<string, Icons.LucideIcon>)[strength.icon] ?? Icons.CheckCircle;
 
   return (
     <motion.div

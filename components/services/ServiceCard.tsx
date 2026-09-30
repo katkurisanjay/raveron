@@ -12,7 +12,7 @@ interface ServiceCardProps {
 
 export function ServiceCard({ service, index = 0, dark = false }: ServiceCardProps) {
   // Dynamically resolve Lucide icon
-  const IconComponent = (Icons as Record<string, Icons.LucideIcon>)[service.icon] ?? Icons.Layers;
+  const IconComponent = (Icons as unknown as Record<string, Icons.LucideIcon>)[service.icon] ?? Icons.Layers;
 
   return (
     <motion.article

@@ -14,7 +14,8 @@ export const siteConfig = {
   // Contact
   contact: {
     email: 'raverontechnologies@gmail.com',
-    phones: [],
+    phones: [] as string[],
+    whatsapp: '',
     address: 'Raveron Technologies, Hyderabad, Telangana, India',
   },
 
@@ -46,6 +47,6 @@ export const siteConfig = {
       process.env.SHOW_UNCONFIRMED_STRENGTHS === 'true' ||
       process.env.NODE_ENV === 'development',
   },
-} as const;
+};
 
 export type SiteConfig = typeof siteConfig;
