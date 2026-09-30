@@ -31,8 +31,9 @@ function InfoRow({ icon: Icon, label, children }: { icon: React.ComponentType<an
   );
 }
 
-export default async function EnquiryDetailPage({ params }: { params: { id: string } }) {
-  const enquiry = await db.enquiry.findUnique({ where: { id: params.id } });
+export default async function EnquiryDetailPage({ params }: { params: Promise<{ id: string }> }) {
+  const { id } = await params;
+  const enquiry = await db.enquiry.findUnique({ where: { id } });
   if (!enquiry) notFound();
 
   const c = STATUS_COLORS[enquiry.status] ?? { bg: 'rgba(107,114,128,0.15)', color: '#9CA3AF' };

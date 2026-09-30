@@ -10,8 +10,9 @@ const statusSchema = z.object({
 
 export async function PATCH(
   request: NextRequest,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
+  const { id } = await params;
   const session = await getServerSession(authOptions);
   if (!session) return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
 
@@ -20,7 +21,7 @@ export async function PATCH(
   if (!result.success) return NextResponse.json({ error: 'Invalid status' }, { status: 400 });
 
   const enquiry = await db.enquiry.update({
-    where: { id: params.id },
+    where: { id },
     data: { status: result.data.status },
     select: { id: true, status: true },
   });
