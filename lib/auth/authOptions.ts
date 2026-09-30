@@ -1,7 +1,14 @@
+// ─────────────────────────────────────────────────────────────────────────────
+// AUTH OPTIONS
+// DB-based authentication is disabled for Vercel static deployment.
+// To re-enable: restore DATABASE_URL env var and uncomment the Prisma block.
+// ─────────────────────────────────────────────────────────────────────────────
+
 import CredentialsProvider from 'next-auth/providers/credentials';
-import bcrypt from 'bcryptjs';
-import { db } from '@/lib/database/db';
 import type { NextAuthOptions } from 'next-auth';
+
+// import bcrypt from 'bcryptjs';
+// import { db } from '@/lib/database/db';
 
 export const authOptions: NextAuthOptions = {
   providers: [
@@ -14,15 +21,18 @@ export const authOptions: NextAuthOptions = {
       async authorize(credentials) {
         if (!credentials?.email || !credentials?.password) return null;
 
-        const user = await db.adminUser.findUnique({
-          where: { email: credentials.email.toLowerCase() },
-        });
-        if (!user) return null;
+        // ── DB-BASED AUTH (disabled — uncomment when DB is connected) ──────────
+        // const user = await db.adminUser.findUnique({
+        //   where: { email: credentials.email.toLowerCase() },
+        // });
+        // if (!user) return null;
+        // const valid = await bcrypt.compare(credentials.password, user.passwordHash);
+        // if (!valid) return null;
+        // return { id: user.id, email: user.email, name: user.name };
+        // ─────────────────────────────────────────────────────────────────────
 
-        const valid = await bcrypt.compare(credentials.password, user.passwordHash);
-        if (!valid) return null;
-
-        return { id: user.id, email: user.email, name: user.name };
+        // Temporary stub — returns null (login always fails) until DB is connected.
+        return null;
       },
     }),
   ],

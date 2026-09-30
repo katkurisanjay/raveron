@@ -1,6 +1,11 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { z } from 'zod';
-import { db } from '@/lib/database/db';
+// import { db } from '@/lib/database/db'; // DB disabled — uncomment when DATABASE_URL is set
+
+// ─────────────────────────────────────────────────────────────────────────────
+// JOB APPLICATIONS API — /api/applications  (POST)
+// DB persistence is commented out for Vercel deployment without a database.
+// ─────────────────────────────────────────────────────────────────────────────
 
 const applicationSchema = z.object({
   jobId: z.string().min(1),
@@ -15,7 +20,7 @@ const applicationSchema = z.object({
 const rateLimitMap = new Map<string, { count: number; resetAt: number }>();
 function checkRateLimit(ip: string): boolean {
   const now = Date.now();
-  const windowMs = 60 * 60 * 1000; // 1 hour
+  const windowMs = 60 * 60 * 1000;
   const maxRequests = 3;
   const record = rateLimitMap.get(ip);
   if (!record || now > record.resetAt) {
@@ -49,7 +54,6 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ error: 'Validation failed.', details: parsed.error.flatten() }, { status: 400 });
   }
 
-  // Validate resume
   const resumeFile = formData.get('resume') as File | null;
   if (!resumeFile || resumeFile.size === 0) {
     return NextResponse.json({ error: 'Resume is required.' }, { status: 400 });
@@ -62,35 +66,44 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ error: 'Resume must be under 10 MB.' }, { status: 400 });
   }
 
-  // TODO: Upload resume to Vercel Blob / S3 and use URL
-  const resumeUrl = `[pending-upload]/${resumeFile.name}`;
+  // TODO: Upload resume to Vercel Blob / S3
+  // const resumeUrl = `[pending-upload]/${resumeFile.name}`;
 
-  // Verify job exists and is active
-  const job = await db.job.findFirst({
-    where: { id: parsed.data.jobId, status: 'active' },
-    select: { id: true, title: true },
+  // ── DB PERSISTENCE (disabled — uncomment when DATABASE_URL is set) ──────────
+  // const job = await db.job.findFirst({
+  //   where: { id: parsed.data.jobId, status: 'active' },
+  //   select: { id: true, title: true },
+  // });
+  // if (!job) {
+  //   return NextResponse.json({ error: 'This position is no longer accepting applications.' }, { status: 404 });
+  // }
+  // try {
+  //   await db.jobApplication.create({
+  //     data: {
+  //       jobId: parsed.data.jobId,
+  //       fullName: parsed.data.fullName,
+  //       email: parsed.data.email,
+  //       phone: parsed.data.phone,
+  //       coverMessage: parsed.data.coverMessage,
+  //       portfolioUrl: parsed.data.portfolioUrl || null,
+  //       resumeUrl,
+  //       status: 'received',
+  //     },
+  //   });
+  //   return NextResponse.json({ success: true, message: 'Application received.' }, { status: 201 });
+  // } catch (err) {
+  //   console.error('[API /applications] DB error:', err);
+  //   return NextResponse.json({ error: 'Failed to save application. Please try again.' }, { status: 500 });
+  // }
+  // ────────────────────────────────────────────────────────────────────────────
+
+  // Log to Vercel Function console until DB is connected
+  console.log('[Application received]', {
+    jobId: parsed.data.jobId,
+    fullName: parsed.data.fullName,
+    email: parsed.data.email,
+    resume: resumeFile.name,
   });
-  if (!job) {
-    return NextResponse.json({ error: 'This position is no longer accepting applications.' }, { status: 404 });
-  }
 
-  try {
-    await db.jobApplication.create({
-      data: {
-        jobId: parsed.data.jobId,
-        fullName: parsed.data.fullName,
-        email: parsed.data.email,
-        phone: parsed.data.phone,
-        coverMessage: parsed.data.coverMessage,
-        portfolioUrl: parsed.data.portfolioUrl || null,
-        resumeUrl,
-        status: 'received',
-      },
-    });
-
-    return NextResponse.json({ success: true, message: 'Application received.' }, { status: 201 });
-  } catch (err) {
-    console.error('[API /applications] DB error:', err);
-    return NextResponse.json({ error: 'Failed to save application. Please try again.' }, { status: 500 });
-  }
+  return NextResponse.json({ success: true, message: 'Application received. We will be in touch soon.' }, { status: 201 });
 }
