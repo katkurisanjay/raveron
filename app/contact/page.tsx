@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { Mail, MapPin, ArrowRight } from 'lucide-react';
-import { WhatsappIcon, LinkedinIcon, InstagramIcon, TwitterIcon } from '@/components/ui/BrandIcons';
+import { LinkedinIcon, InstagramIcon, TwitterIcon } from '@/components/ui/BrandIcons';
 import { SectionHeading } from '@/components/ui/SectionHeading';
 import { Reveal } from '@/components/ui/Reveal';
 import { CTASection } from '@/components/sections/CTASection';
@@ -150,10 +150,7 @@ export default function ContactPage() {
                         <InstagramIcon style={{ width: 16, height: 16 }} />
                         Instagram
                       </a>
-                      <a href={`https://wa.me/${(siteConfig.contact.whatsapp || '').replace(/\D/g, '')}`} target="_blank" rel="noopener noreferrer" style={{ display: 'flex', alignItems: 'center', gap: '0.375rem', fontSize: '0.875rem', color: 'var(--color-blue-primary)', textDecoration: 'none', fontWeight: 600 }}>
-                        <WhatsappIcon style={{ width: 16, height: 16 }} />
-                        WhatsApp
-                      </a>
+
                       {siteConfig.social.twitter && <a href={siteConfig.social.twitter} target="_blank" rel="noopener noreferrer" style={{ display: 'flex', alignItems: 'center', gap: '0.375rem', fontSize: '0.875rem', color: 'var(--color-blue-primary)', textDecoration: 'none', fontWeight: 600 }}><TwitterIcon style={{ width: 16, height: 16 }} />X / Twitter</a>}
                     </div>
                   </div>
