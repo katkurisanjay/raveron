@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import { Mail, MapPin, ArrowRight } from 'lucide-react';
-import { LinkedinIcon, InstagramIcon, TwitterIcon } from '@/components/ui/BrandIcons';
+import { Mail, MapPin, ArrowRight, Phone } from 'lucide-react';
+import { LinkedinIcon, InstagramIcon, TwitterIcon, WhatsappIcon } from '@/components/ui/BrandIcons';
 import { SectionHeading } from '@/components/ui/SectionHeading';
 import { Reveal } from '@/components/ui/Reveal';
 import { CTASection } from '@/components/sections/CTASection';
@@ -23,7 +23,7 @@ export const metadata: Metadata = {
 
 const contactMethods = [
   { icon: Mail, label: 'Email', value: siteConfig.contact.email, href: siteConfig.contact.email ? `mailto:${siteConfig.contact.email}` : null },
-  ...(siteConfig.contact.phones || []).map((phone, i) => ({ icon: WhatsappIcon, label: i === 0 ? 'Phone' : 'Phone 2', value: phone, href: `tel:${phone}` })),
+  ...(siteConfig.contact.phones || []).map((phone, i) => ({ icon: Phone, label: i === 0 ? 'Phone' : 'Phone 2', value: phone, href: `tel:${phone}` })),
   { icon: WhatsappIcon, label: 'WhatsApp', value: siteConfig.contact.whatsapp, href: siteConfig.contact.whatsapp ? `https://wa.me/${siteConfig.contact.whatsapp.replace(/\D/g, '')}` : null },
   { icon: MapPin, label: 'Address', value: siteConfig.contact.address, href: null },
 ].filter((m) => m.value);
