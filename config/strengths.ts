@@ -1,6 +1,6 @@
-// ============================================================
-// RAVERON TECHNOLOGIES — Workforce & Delivery Strengths
-// [ASSUMED — all items must be confirmed by RAVERON before publishing]
+﻿// ============================================================
+// RAVERON TECHNOLOGIES â€” Workforce & Delivery Strengths
+// [ASSUMED â€” all items must be confirmed by RAVERON before publishing]
 //
 // Items with confirmed: false are hidden in production.
 // Toggle SHOW_UNCONFIRMED_STRENGTHS=true in .env for preview.
@@ -16,18 +16,18 @@ export type StrengthGroup =
 export interface Strength {
   id: string;           // stable slug
   group: StrengthGroup;
-  badge: string;        // 2–4 words, for chips/badges
+  badge: string;        // 2â€“4 words, for chips/badges
   title: string;        // card title
   line: string;         // one-line description (for cards)
-  description: string;  // 1–2 sentence extended copy (for detail panels)
+  description: string;  // 1â€“2 sentence extended copy (for detail panels)
   icon: string;         // Lucide icon name
   confirmed: boolean;   // default false until RAVERON confirms
   enabled: boolean;     // allows hiding without deleting
-  placements: string[]; // e.g. ['home.why', 'services.ai-data']
+  placements: string[]; // e.g. ['home.why', 'services.engineering']
 }
 
 export const strengths: Strength[] = [
-  // ── WORKFORCE & TALENT ──────────────────────────────────────────────────────
+  // â”€â”€ WORKFORCE & TALENT â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
   {
     id: 'vetted-workforce',
     group: 'workforce',
@@ -39,7 +39,7 @@ export const strengths: Strength[] = [
     icon: 'UserCheck',
     confirmed: false,
     enabled: true,
-    placements: ['home.why', 'services.ai-data'],
+    placements: ['home.why', 'services.engineering'],
   },
   {
     id: 'pre-trained-professionals',
@@ -52,7 +52,7 @@ export const strengths: Strength[] = [
     icon: 'GraduationCap',
     confirmed: false,
     enabled: true,
-    placements: ['home.why', 'services.ai-data', 'careers'],
+    placements: ['home.why', 'services.engineering', 'careers'],
   },
   {
     id: 'skill-assessed-contributors',
@@ -65,7 +65,7 @@ export const strengths: Strength[] = [
     icon: 'ClipboardCheck',
     confirmed: false,
     enabled: true,
-    placements: ['home.why', 'services.ai-data'],
+    placements: ['home.why', 'services.engineering'],
   },
   {
     id: 'domain-matched-teams',
@@ -78,7 +78,7 @@ export const strengths: Strength[] = [
     icon: 'Users',
     confirmed: false,
     enabled: true,
-    placements: ['home.why', 'services.ai-data'],
+    placements: ['home.why', 'services.engineering'],
   },
   {
     id: 'dedicated-team-leads',
@@ -117,7 +117,7 @@ export const strengths: Strength[] = [
     icon: 'Languages',
     confirmed: false,
     enabled: true,
-    placements: ['services.ai-data'],
+    placements: ['services.engineering'],
   },
   {
     id: 'continuous-upskilling',
@@ -133,7 +133,7 @@ export const strengths: Strength[] = [
     placements: ['careers'],
   },
 
-  // ── QUALITY & PROCESS ────────────────────────────────────────────────────────
+  // â”€â”€ QUALITY & PROCESS â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
   {
     id: 'guideline-driven-workflows',
     group: 'quality',
@@ -145,7 +145,7 @@ export const strengths: Strength[] = [
     icon: 'BookMarked',
     confirmed: false,
     enabled: true,
-    placements: ['home.quality', 'services.ai-data'],
+    placements: ['home.quality', 'services.engineering'],
   },
   {
     id: 'multi-stage-quality-review',
@@ -158,7 +158,7 @@ export const strengths: Strength[] = [
     icon: 'ListChecks',
     confirmed: false,
     enabled: true,
-    placements: ['home.quality', 'services.ai-data'],
+    placements: ['home.quality', 'services.engineering'],
   },
   {
     id: 'consistency-checks',
@@ -171,7 +171,7 @@ export const strengths: Strength[] = [
     icon: 'CheckCircle',
     confirmed: false,
     enabled: true,
-    placements: ['home.quality', 'services.ai-data'],
+    placements: ['home.quality', 'services.engineering'],
   },
   {
     id: 'pilot-before-scale',
@@ -184,7 +184,7 @@ export const strengths: Strength[] = [
     icon: 'FlaskConical',
     confirmed: false,
     enabled: true,
-    placements: ['home.quality', 'services.ai-data', 'start-a-project.sidebar'],
+    placements: ['home.quality', 'services.engineering', 'start-a-project.sidebar'],
   },
   {
     id: 'feedback-revision-loops',
@@ -223,10 +223,10 @@ export const strengths: Strength[] = [
     icon: 'GitBranch',
     confirmed: false,
     enabled: true,
-    placements: ['services.ai-data'],
+    placements: ['services.engineering'],
   },
 
-  // ── SECURITY & CONFIDENTIALITY ───────────────────────────────────────────────
+  // â”€â”€ SECURITY & CONFIDENTIALITY â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
   {
     id: 'confidentiality-bound-teams',
     group: 'security',
@@ -238,7 +238,7 @@ export const strengths: Strength[] = [
     icon: 'Lock',
     confirmed: false,
     enabled: true,
-    placements: ['start-a-project.sidebar', 'services.ai-data'],
+    placements: ['start-a-project.sidebar', 'services.engineering'],
   },
   {
     id: 'controlled-data-access',
@@ -251,7 +251,7 @@ export const strengths: Strength[] = [
     icon: 'Shield',
     confirmed: false,
     enabled: true,
-    placements: ['start-a-project.sidebar', 'services.ai-data'],
+    placements: ['start-a-project.sidebar', 'services.engineering'],
   },
   {
     id: 'secure-data-handling',
@@ -264,10 +264,10 @@ export const strengths: Strength[] = [
     icon: 'ShieldCheck',
     confirmed: false,
     enabled: true,
-    placements: ['services.ai-data'],
+    placements: ['services.engineering'],
   },
 
-  // ── DELIVERY & FLEXIBILITY ────────────────────────────────────────────────────
+  // â”€â”€ DELIVERY & FLEXIBILITY â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
   {
     id: 'deadline-focused-delivery',
     group: 'delivery',
@@ -292,7 +292,7 @@ export const strengths: Strength[] = [
     icon: 'FolderOpen',
     confirmed: false,
     enabled: true,
-    placements: ['about.working-approach', 'services.ai-data'],
+    placements: ['about.working-approach', 'services.engineering'],
   },
   {
     id: 'tool-flexible-execution',
@@ -347,7 +347,7 @@ export const strengths: Strength[] = [
     placements: ['about.working-approach', 'start-a-project.sidebar'],
   },
 
-  // ── TECHNOLOGY & DEVELOPMENT ──────────────────────────────────────────────────
+  // â”€â”€ TECHNOLOGY & DEVELOPMENT â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
   {
     id: 'end-to-end-delivery',
     group: 'technology',
@@ -359,7 +359,7 @@ export const strengths: Strength[] = [
     icon: 'ArrowRightLeft',
     confirmed: false,
     enabled: true,
-    placements: ['services.technology'],
+    placements: ['services.domains'],
   },
   {
     id: 'scalable-maintainable-code',
@@ -372,7 +372,7 @@ export const strengths: Strength[] = [
     icon: 'Code2',
     confirmed: false,
     enabled: true,
-    placements: ['services.technology'],
+    placements: ['services.domains'],
   },
   {
     id: 'responsive-accessible-builds',
@@ -385,7 +385,7 @@ export const strengths: Strength[] = [
     icon: 'Smartphone',
     confirmed: false,
     enabled: true,
-    placements: ['services.technology'],
+    placements: ['services.domains'],
   },
   {
     id: 'post-launch-support',
@@ -398,7 +398,7 @@ export const strengths: Strength[] = [
     icon: 'HeartHandshake',
     confirmed: false,
     enabled: true,
-    placements: ['services.technology'],
+    placements: ['services.domains'],
   },
   {
     id: 'clear-technical-communication',
@@ -411,11 +411,11 @@ export const strengths: Strength[] = [
     icon: 'MessageCircle',
     confirmed: false,
     enabled: true,
-    placements: ['services.technology'],
+    placements: ['services.domains'],
   },
 ];
 
-// ── HELPERS ─────────────────────────────────────────────────────────────────────
+// â”€â”€ HELPERS â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 
 /**
  * Returns strengths filtered by group, placement, and (optionally) confirmed status.
@@ -443,3 +443,4 @@ export function getStrengths({
   if (limit) result = result.slice(0, limit);
   return result;
 }
+

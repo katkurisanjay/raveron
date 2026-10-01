@@ -1,6 +1,6 @@
-// ============================================================
-// RAVERON TECHNOLOGIES — FAQ Configuration
-// [ASSUMED — all answers must be confirmed by RAVERON before publishing]
+﻿// ============================================================
+// RAVERON TECHNOLOGIES â€” FAQ Configuration
+// [ASSUMED â€” all answers must be confirmed by RAVERON before publishing]
 // FAQPage JSON-LD will only be generated for confirmed, visible items.
 // ============================================================
 
@@ -10,7 +10,7 @@ export interface FaqItem {
   answer: string;
   confirmed: boolean;
   enabled: boolean;
-  placements: string[]; // e.g. ['start-a-project', 'services.ai-data']
+  placements: string[]; // e.g. ['start-a-project', 'services.engineering']
 }
 
 export const faqItems: FaqItem[] = [
@@ -21,7 +21,7 @@ export const faqItems: FaqItem[] = [
       'Data annotation, labeling, AI training, document processing, validation, and technology projects such as web and mobile development. Describe your requirement in your own words on the Start a Project page.',
     confirmed: false,
     enabled: true,
-    placements: ['start-a-project', 'services.ai-data'],
+    placements: ['start-a-project', 'services.engineering'],
   },
   {
     id: 'choose-service-before-enquiring',
@@ -30,7 +30,7 @@ export const faqItems: FaqItem[] = [
       'No. Describe what you need in the free-text field and our team will review it.',
     confirmed: false,
     enabled: true,
-    placements: ['start-a-project', 'services.ai-data'],
+    placements: ['start-a-project', 'services.engineering'],
   },
   {
     id: 'data-confidentiality',
@@ -39,7 +39,7 @@ export const faqItems: FaqItem[] = [
       'Project data is handled by assigned team members under confidentiality terms, with access limited to the project. Specific arrangements can be discussed for your requirement.',
     confirmed: false,
     enabled: true,
-    placements: ['start-a-project', 'services.ai-data'],
+    placements: ['start-a-project', 'services.engineering'],
   },
   {
     id: 'work-on-our-platform',
@@ -48,7 +48,7 @@ export const faqItems: FaqItem[] = [
       'Where the project requires it, work can be carried out in client-specified platforms or through our own workflow.',
     confirmed: false,
     enabled: true,
-    placements: ['start-a-project', 'services.ai-data'],
+    placements: ['start-a-project', 'services.engineering'],
   },
   {
     id: 'delivery-formats',
@@ -57,7 +57,7 @@ export const faqItems: FaqItem[] = [
       'Formats such as XML, HTML, PDF, JSON, and CSV, or another format specified in your requirements.',
     confirmed: false,
     enabled: true,
-    placements: ['start-a-project', 'services.ai-data'],
+    placements: ['start-a-project', 'services.engineering'],
   },
   {
     id: 'start-with-small-sample',
@@ -66,7 +66,7 @@ export const faqItems: FaqItem[] = [
       'A pilot batch can be used to confirm expectations before scaling.',
     confirmed: false,
     enabled: true,
-    placements: ['start-a-project', 'services.ai-data'],
+    placements: ['start-a-project', 'services.engineering'],
   },
   {
     id: 'maintain-quality',
@@ -75,7 +75,7 @@ export const faqItems: FaqItem[] = [
       'Through guideline-driven workflows, review stages, and consistency checks, plus feedback loops with you.',
     confirmed: false,
     enabled: true,
-    placements: ['start-a-project', 'services.ai-data'],
+    placements: ['start-a-project', 'services.engineering'],
   },
   {
     id: 'scale-with-volume',
@@ -84,7 +84,7 @@ export const faqItems: FaqItem[] = [
       'Team capacity can be adjusted to project needs, subject to scope and timeline.',
     confirmed: false,
     enabled: true,
-    placements: ['start-a-project', 'services.ai-data'],
+    placements: ['start-a-project', 'services.engineering'],
   },
   {
     id: 'communication-during-project',
@@ -120,7 +120,7 @@ export const faqItems: FaqItem[] = [
       'Yes, Technology & Development covers IT projects, web development, mobile app development, and related technology solutions.',
     confirmed: false,
     enabled: true,
-    placements: ['start-a-project', 'services.technology'],
+    placements: ['start-a-project', 'services.domains'],
   },
 ];
 
@@ -142,3 +142,4 @@ export function getFaqItems({
   if (limit) result = result.slice(0, limit);
   return result;
 }
+

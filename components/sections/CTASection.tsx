@@ -42,7 +42,7 @@ export function CTASection() {
       <div className="container" style={{ position: 'relative', zIndex: 1, textAlign: 'center' }}>
         <Reveal>
           <span className="eyebrow" style={{ color: 'var(--color-blue-electric)', display: 'block', marginBottom: '1.25rem' }}>
-            Ready to Begin?
+            Let&apos;s Build Something Great
           </span>
         </Reveal>
 
@@ -52,8 +52,8 @@ export function CTASection() {
             className="display-xl"
             style={{ color: 'var(--color-white)', maxWidth: '680px', marginInline: 'auto', marginBottom: '1.25rem' }}
           >
-            Tell us about your project.{' '}
-            <span className="text-gradient-blue">We&apos;ll take it from there.</span>
+            Have a project, a problem, or just an idea?{' '}
+            <span className="text-gradient-blue">Our team is ready to engage.</span>
           </h2>
         </Reveal>
 
@@ -64,8 +64,8 @@ export function CTASection() {
             marginInline: 'auto',
             marginBottom: '2.5rem',
           }}>
-            Describe what you need in your own words. Our team reviews every requirement
-            and will be in touch through the details you provide.
+            Whether you need a dedicated team for a long-term project, freelance expertise for a specific feature, 
+            or a trusted partner with deep domain knowledge — RAVERON is ready to engage.
           </p>
         </Reveal>
 

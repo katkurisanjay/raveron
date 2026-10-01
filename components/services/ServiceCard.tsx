@@ -205,7 +205,7 @@ export function ServiceCard({ service, index = 0, dark = false }: ServiceCardPro
             textTransform: 'uppercase',
             color: dark ? 'rgba(255,255,255,0.4)' : 'var(--color-cool-gray)',
           }}>
-            {service.category === 'ai-data' ? 'AI & Data' : 'Technology'}
+            {service.category === 'engineering' ? 'Engineering' : 'Domain'}
           </span>
         </div>
 

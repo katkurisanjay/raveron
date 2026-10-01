@@ -12,9 +12,9 @@ export function CoreCapabilitiesSection() {
         <SectionHeading
           id="capabilities-heading"
           eyebrow="Our Capabilities"
-          title="Two divisions."
-          titleHighlight="One team."
-          description="RAVERON operates across AI & Data Services and Technology & Development — covering the full spectrum from data preparation to product delivery."
+          title="Elite Engineering."
+          titleHighlight="Deep Domains."
+          description="RAVERON brings highly experienced tech teams and specialized industry expertise — delivering scalable software for Healthcare, Agritech, Finance, and beyond."
           align="center"
         />
 
@@ -38,7 +38,7 @@ export function CoreCapabilitiesSection() {
               }}>
                 <div>
                   <span className="badge badge-blue" style={{ marginBottom: '1.25rem' }}>
-                    {cat.id === 'ai-data' ? 'Division 01' : 'Division 02'}
+                    {cat.id === 'engineering' ? 'Division 01' : 'Division 02'}
                   </span>
                   <h3 className="display-sm" style={{ color: 'var(--color-white)', marginBottom: '0.75rem' }}>
                     {cat.name}

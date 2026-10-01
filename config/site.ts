@@ -8,7 +8,7 @@ export const siteConfig = {
   shortName: 'Raveron',
   tagline: 'Think Deeper. Build Stronger. Evolve Further.',
   description:
-    'RAVERON TECHNOLOGIES provides professional AI & Data Services and Technology & Development solutions for global business requirements.',
+    'RAVERON TECHNOLOGIES provides expert engineering, AI development, and domain-specific consultancy for US-based clients, specializing in full stack, cloud, DevOps, and Agentic AI.',
   url: process.env.NEXT_PUBLIC_SITE_URL || 'https://raverontech.com', // [ASSUMED] — update with real domain
 
   // Contact
@@ -16,7 +16,7 @@ export const siteConfig = {
     email: 'raverontechnologies@gmail.com',
     phones: [] as string[],
     whatsapp: '',
-    address: 'Raveron Technologies, Hyderabad, Telangana, India',
+    address: 'Raveron Technologies, US & Global Consulting',
   },
 
   // Social
@@ -32,9 +32,9 @@ export const siteConfig = {
   // SEO defaults
   seo: {
     titleTemplate: '%s | RAVERON TECHNOLOGIES',
-    defaultTitle: 'RAVERON TECHNOLOGIES — AI & Data Services | Technology Development',
+    defaultTitle: 'RAVERON TECHNOLOGIES — Expert Technology Consultants & Engineering Partners',
     defaultDescription:
-      'RAVERON TECHNOLOGIES delivers professional AI & Data Services, Data Annotation, AI Training, and Technology & Development solutions for global businesses.',
+      'RAVERON TECHNOLOGIES delivers premium full-stack, cloud, DevOps, and AI development services with deep domain expertise in Healthcare, Agritech, CRM, and Finance.',
     ogImage: '/images/og-default.png', // [ASSUMED] — provide actual OG image
     twitterHandle: '@raverontech', // [ASSUMED]
     locale: 'en_US',

@@ -1,6 +1,6 @@
-// ============================================================
-// RAVERON TECHNOLOGIES — Client Benefits Configuration
-// [ASSUMED — confirm with RAVERON before publishing]
+﻿// ============================================================
+// RAVERON TECHNOLOGIES â€” Client Benefits Configuration
+// [ASSUMED â€” confirm with RAVERON before publishing]
 // ============================================================
 
 export interface Benefit {
@@ -21,7 +21,7 @@ export const benefits: Benefit[] = [
     icon: 'SquareMinus',
     confirmed: false,
     enabled: true,
-    placements: ['home.benefits', 'services.ai-data', 'services.technology'],
+    placements: ['home.benefits', 'services.engineering', 'services.domains'],
   },
   {
     id: 'focus-on-core-work',
@@ -30,7 +30,7 @@ export const benefits: Benefit[] = [
     icon: 'Target',
     confirmed: false,
     enabled: true,
-    placements: ['home.benefits', 'services.ai-data', 'services.technology'],
+    placements: ['home.benefits', 'services.engineering', 'services.domains'],
   },
   {
     id: 'faster-project-start',
@@ -48,7 +48,7 @@ export const benefits: Benefit[] = [
     icon: 'ArrowUpDown',
     confirmed: false,
     enabled: true,
-    placements: ['home.benefits', 'services.ai-data'],
+    placements: ['home.benefits', 'services.engineering'],
   },
   {
     id: 'consistent-output',
@@ -57,7 +57,7 @@ export const benefits: Benefit[] = [
     icon: 'CheckCircle',
     confirmed: false,
     enabled: true,
-    placements: ['services.ai-data'],
+    placements: ['services.engineering'],
   },
   {
     id: 'clear-communication',
@@ -75,7 +75,7 @@ export const benefits: Benefit[] = [
     icon: 'Network',
     confirmed: false,
     enabled: true,
-    placements: ['services.ai-data', 'services.technology'],
+    placements: ['services.engineering', 'services.domains'],
   },
   {
     id: 'format-ready-delivery',
@@ -84,7 +84,7 @@ export const benefits: Benefit[] = [
     icon: 'FileOutput',
     confirmed: false,
     enabled: true,
-    placements: ['services.ai-data'],
+    placements: ['services.engineering'],
   },
 ];
 
@@ -106,3 +106,4 @@ export function getBenefits({
   if (limit) result = result.slice(0, limit);
   return result;
 }
+

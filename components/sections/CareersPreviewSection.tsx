@@ -4,10 +4,10 @@ import { SectionHeading } from '@/components/ui/SectionHeading';
 import { Reveal } from '@/components/ui/Reveal';
 
 const culturePoints = [
-  { label: 'Training-First', desc: 'Everyone is prepared before they begin project work.' },
-  { label: 'Team-Led', desc: 'Dedicated leads provide clear ownership and direction.' },
-  { label: 'Continuously Improving', desc: 'Feedback and review feed back into how we work.' },
-  { label: 'Collaborative', desc: 'Teams are built around the requirements of each project.' },
+  { label: 'Senior-Led Teams', desc: 'Every engagement is led by experienced engineers, not juniors.' },
+  { label: 'Domain Focused', desc: 'We hire specialists with proven industry experience, not generalists.' },
+  { label: 'Remote-First', desc: 'US timezone compatible, async-friendly, and built for remote collaboration.' },
+  { label: 'Ownership Culture', desc: 'We take full ownership of outcomes, not just task completion.' },
 ];
 
 export function CareersPreviewSection() {
@@ -26,20 +26,20 @@ export function CareersPreviewSection() {
           <div>
             <SectionHeading
               id="careers-preview-heading"
-              eyebrow="Careers at RAVERON"
-              title="Join a team that"
-              titleHighlight="grows with you."
-              description="We build teams around skills, prepare people before they begin, and invest in continuous development. If you want to grow through purposeful work, RAVERON may be the right place."
+              eyebrow="Partner With Us"
+              title="Work with a team that"
+              titleHighlight="delivers results."
+              description="Whether you need a long-term embedded team, freelance specialists, or project-based consulting, RAVERON provides the talent and accountability you need."
             />
 
             <Reveal delay={0.2}>
               <div style={{ marginTop: '2rem', display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
-                <Link href="/careers" className="btn btn-primary">
-                  View Careers
+                <Link href="/start-a-project" className="btn btn-primary">
+                  Start a Project
                   <ArrowRight size={15} />
                 </Link>
                 <Link href="/contact" className="btn btn-outline">
-                  Get in Touch
+                  Schedule a Call
                 </Link>
               </div>
             </Reveal>

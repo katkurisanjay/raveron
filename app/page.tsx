@@ -3,30 +3,31 @@ import { siteConfig } from '@/config/site';
 import { Hero } from '@/components/hero/Hero';
 import { CompanyIntroSection } from '@/components/sections/CompanyIntroSection';
 import { CoreCapabilitiesSection } from '@/components/sections/CoreCapabilitiesSection';
-import { AIDataServicesSection, TechServicesSection } from '@/components/sections/ServicesSections';
+import { EngineeringServicesSection, DomainExpertiseSection } from '@/components/sections/ServicesSections';
 import { WhyRaveronSection } from '@/components/sections/WhyRaveronSection';
 import { HowWeWorkSection } from '@/components/sections/HowWeWorkSection';
 import { QualitySection } from '@/components/sections/QualitySection';
 import { CareersPreviewSection } from '@/components/sections/CareersPreviewSection';
 import { CTASection } from '@/components/sections/CTASection';
+import { PortfolioSection } from '@/components/sections/PortfolioSection';
 
 export const metadata: Metadata = {
-  title: 'AI & Data Annotation Services | Technology Development Company | RAVERON TECHNOLOGIES',
+  title: 'Expert Technology Consultants & Engineering Partners | RAVERON',
   description:
-    'RAVERON TECHNOLOGIES offers professional AI & Data Services — data annotation, image & video labeling, AI training data — and Technology & Development solutions including web development, mobile apps, and custom software for global businesses. Based in Hyderabad, India.',
+    'RAVERON TECHNOLOGIES offers premium software engineering, DevOps, cloud solutions (AWS, Azure, GCP), and AI development. We bring deep domain expertise in Healthcare, Agritech, CRM, Warehouse Management, and Mortgage Finance to US-based clients.',
   keywords: [
-    'RAVERON TECHNOLOGIES',
-    'AI data annotation company',
-    'data labeling services India',
-    'image annotation services',
-    'video annotation services',
-    'AI training data company',
-    'machine learning data services',
-    'technology development Hyderabad',
-    'web development company India',
-    'mobile app development India',
-    'custom software development',
-    'IT outsourcing India',
+    'Technology Consultants US',
+    'Full Stack Development Company',
+    'Flutter App Development',
+    'DevOps & MLOps Consultants',
+    'Cloud Architecture AWS Azure GCP',
+    'Agentic AI Development',
+    'Voice Call Analyzer AI',
+    'Healthcare Software Solutions',
+    'Agritech Development',
+    'Warehouse Management Systems Robotics',
+    'Mortgage Finance Tech',
+    'Custom Software Development',
   ],
   alternates: { canonical: '/' },
 };
@@ -37,8 +38,9 @@ export default function HomePage() {
       <Hero />
       <CompanyIntroSection />
       <CoreCapabilitiesSection />
-      <AIDataServicesSection />
-      <TechServicesSection />
+      <EngineeringServicesSection />
+      <DomainExpertiseSection />
+      <PortfolioSection />
       <WhyRaveronSection />
       <HowWeWorkSection />
       <QualitySection />

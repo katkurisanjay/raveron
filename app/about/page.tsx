@@ -26,11 +26,11 @@ export const metadata: Metadata = {
 };
 
 const principles = [
-  { word: 'Intelligent', desc: 'We think deeper — analytical rigour and structured thinking in every project.', icon: Brain },
-  { word: 'Strong', desc: 'We build to last — quality, consistency, and long-term value in everything we deliver.', icon: Shield },
-  { word: 'Evolving', desc: 'We grow continuously — improving processes, people, and capabilities with every engagement.', icon: RefreshCw },
-  { word: 'Creative', desc: 'We turn ideas into impact — translating requirements into effective outcomes.', icon: Lightbulb },
-  { word: 'Global', desc: 'We operate with a global business mindset — built for international clients and collaboration.', icon: Globe2 },
+  { word: 'Intelligent', desc: 'We think deeper â€” analytical rigour and structured thinking in every project.', icon: Brain },
+  { word: 'Strong', desc: 'We build to last â€” quality, consistency, and long-term value in everything we deliver.', icon: Shield },
+  { word: 'Evolving', desc: 'We grow continuously â€” improving processes, people, and capabilities with every engagement.', icon: RefreshCw },
+  { word: 'Creative', desc: 'We turn ideas into impact â€” translating requirements into effective outcomes.', icon: Lightbulb },
+  { word: 'Global', desc: 'We operate with a global business mindset â€” built for international clients and collaboration.', icon: Globe2 },
 ];
 
 const workingSteps = [
@@ -103,7 +103,7 @@ export default function AboutPage() {
           <Reveal delay={0.2}>
             <p className="body-lg" style={{ color: 'rgba(255,255,255,0.7)', lineHeight: 1.8, fontSize: '1.125rem' }}>
               RAVERON TECHNOLOGIES provides professional AI & Data Services and Technology & Development
-              solutions. We exist to help businesses get work done — efficiently, accurately, and at scale.
+              solutions. We exist to help businesses get work done â€” efficiently, accurately, and at scale.
             </p>
           </Reveal>
         </div>
@@ -148,17 +148,17 @@ export default function AboutPage() {
               <Reveal delay={0.2}>
                 <p className="body-md" style={{ color: 'var(--color-cool-gray)', lineHeight: 1.8, marginTop: '1.5rem', paddingLeft: '1.5rem' }}>
                   Our <strong style={{ color: 'var(--color-navy-deep)' }}>Technology & Development</strong> division delivers IT projects, web development,
-                  mobile app development, and technology solutions — from requirement analysis through
+                  mobile app development, and technology solutions â€” from requirement analysis through
                   deployment and post-launch support.
                 </p>
               </Reveal>
               <Reveal delay={0.3}>
                 <div style={{ marginTop: '2.5rem', display: 'flex', gap: '1rem', flexWrap: 'wrap', paddingLeft: '1.5rem' }}>
-                  <Link href="/services/ai-data" className="btn btn-primary" style={{ boxShadow: '0 4px 15px rgba(0, 119, 255, 0.3)' }}>
-                    AI & Data Services <ArrowRight size={15} />
+                  <Link href="/services/engineering" className="btn btn-primary" style={{ boxShadow: '0 4px 15px rgba(0, 119, 255, 0.3)' }}>
+                    Engineering Services <ArrowRight size={15} />
                   </Link>
-                  <Link href="/services/technology" className="btn btn-outline">
-                    Technology & Development
+                  <Link href="/services/domains" className="btn btn-outline">
+                    Domain Expertise
                   </Link>
                 </div>
               </Reveal>
@@ -355,3 +355,4 @@ export default function AboutPage() {
     </>
   );
 }
+

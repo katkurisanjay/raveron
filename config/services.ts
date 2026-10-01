@@ -8,12 +8,12 @@ export interface Service {
   shortDescription: string;
   description: string;
   icon: string; // Lucide icon name
-  category: 'ai-data' | 'technology';
+  category: 'engineering' | 'domains';
   enabled: boolean;
 }
 
 export interface ServiceCategory {
-  id: 'ai-data' | 'technology';
+  id: 'engineering' | 'domains';
   name: string;
   tagline: string;
   description: string;
@@ -24,183 +24,133 @@ export interface ServiceCategory {
 
 export const serviceCategories: ServiceCategory[] = [
   {
-    id: 'ai-data',
-    name: 'AI & Data Services',
-    tagline: 'Precision Data, At Scale',
+    id: 'engineering',
+    name: 'Engineering & Technology',
+    tagline: 'Elite Tech Teams, Ready to Build',
     description:
-      'Professional data annotation, labeling, and AI training services designed to meet the requirements of machine learning pipelines and AI product development.',
-    href: '/services/ai-data',
-    icon: 'BrainCircuit',
+      'We provide highly experienced tech teams across modern stacks. From custom web and mobile apps to scalable cloud architectures and cutting-edge Agentic AI solutions.',
+    href: '/services/engineering',
+    icon: 'Terminal',
     services: [
       {
-        id: 'data-annotation',
-        name: 'Data Annotation',
-        shortDescription: 'Accurate, structured annotation for AI training datasets.',
+        id: 'full-stack',
+        name: 'Full Stack Development',
+        shortDescription: 'End-to-end web applications built with modern frameworks.',
         description:
-          'Systematic annotation of structured and unstructured data to support machine learning model development and validation.',
-        icon: 'Tag',
-        category: 'ai-data',
-        enabled: true,
-      },
-      {
-        id: 'image-annotation',
-        name: 'Image Annotation',
-        shortDescription: 'Bounding boxes, segmentation, keypoints and classification.',
-        description:
-          'Image labeling for computer vision projects including object detection, semantic segmentation, and classification tasks.',
-        icon: 'ImagePlus',
-        category: 'ai-data',
-        enabled: true,
-      },
-      {
-        id: 'video-annotation',
-        name: 'Video Annotation',
-        shortDescription: 'Frame-level annotation and temporal tracking for video AI.',
-        description:
-          'Frame-by-frame annotation, object tracking, and event labeling for video-based AI and surveillance applications.',
-        icon: 'Film',
-        category: 'ai-data',
-        enabled: true,
-      },
-      {
-        id: 'data-labeling',
-        name: 'Data Labeling',
-        shortDescription: 'Scalable labeling across text, audio, image, and video.',
-        description:
-          'High-volume, consistent labeling workflows for diverse data types, structured to client-defined guidelines.',
-        icon: 'Labels',
-        category: 'ai-data',
-        enabled: true,
-      },
-      {
-        id: 'ai-data-training',
-        name: 'AI Data Training',
-        shortDescription: 'Training-ready datasets for machine learning models.',
-        description:
-          'End-to-end data preparation — collection, annotation, validation, and formatting — for AI model training.',
-        icon: 'Cpu',
-        category: 'ai-data',
-        enabled: true,
-      },
-      {
-        id: 'voice-training',
-        name: 'Voice Training',
-        shortDescription: 'Audio transcription, labeling, and speech dataset preparation.',
-        description:
-          'Voice data collection, transcription, accent labeling, and audio dataset formatting for speech recognition and NLP models.',
-        icon: 'Mic',
-        category: 'ai-data',
-        enabled: true,
-      },
-      {
-        id: 'ai-code-training',
-        name: 'AI Code Training',
-        shortDescription: 'Code dataset preparation and annotation for LLMs.',
-        description:
-          'Structured code annotation, review, and dataset preparation to support AI code generation and evaluation models.',
+          'Highly experienced full stack teams delivering robust, scalable, and secure web applications using React, Next.js, Node, and more.',
         icon: 'Code2',
-        category: 'ai-data',
+        category: 'engineering',
         enabled: true,
       },
       {
-        id: 'multi-turn-ai-training',
-        name: 'Multi-Turn AI Training',
-        shortDescription: 'Conversational dataset creation for dialogue and chat AI.',
+        id: 'android-flutter',
+        name: 'Mobile Apps (Flutter)',
+        shortDescription: 'High-performance cross-platform applications.',
         description:
-          'Multi-turn dialogue annotation, conversation labeling, and dataset construction for conversational AI and LLM fine-tuning.',
-        icon: 'MessageSquare',
-        category: 'ai-data',
+          'Expert Android and cross-platform mobile development using Flutter, ensuring a seamless user experience across devices.',
+        icon: 'Smartphone',
+        category: 'engineering',
         enabled: true,
       },
       {
-        id: 'xml-projects',
-        name: 'XML Projects',
-        shortDescription: 'Structured XML data processing and transformation.',
+        id: 'cloud-aws-azure-gcp',
+        name: 'Cloud (AWS, Azure, GCP)',
+        shortDescription: 'Scalable cloud infrastructure and migrations.',
         description:
-          'XML authoring, transformation, validation, and schema-compliant processing for document and data pipelines.',
-        icon: 'FileCode',
-        category: 'ai-data',
+          'Architecting, deploying, and managing robust cloud infrastructures on AWS, Azure, and GCP for optimal performance and cost.',
+        icon: 'Cloud',
+        category: 'engineering',
         enabled: true,
       },
       {
-        id: 'document-processing',
-        name: 'HTML/XML/PDF Processing',
-        shortDescription: 'Document extraction, conversion, and data preparation.',
+        id: 'ai-development',
+        name: 'AI Development',
+        shortDescription: 'Agentic AI, generative models, and voice call analyzers.',
         description:
-          'Processing of HTML, XML, and PDF documents for data extraction, conversion, structuring, and downstream use.',
-        icon: 'FileText',
-        category: 'ai-data',
+          'Building advanced AI solutions including autonomous Agentic AI, custom LLMs, and highly specialized voice call analysis systems.',
+        icon: 'BrainCircuit',
+        category: 'engineering',
         enabled: true,
       },
       {
-        id: 'quality-checking',
-        name: 'Quality Checking & Validation',
-        shortDescription: 'Independent review and validation of AI training data.',
+        id: 'devops',
+        name: 'DevOps',
+        shortDescription: 'CI/CD pipelines, automation, and infrastructure.',
         description:
-          'Multi-stage quality review, consistency verification, and validation of annotated data before delivery.',
-        icon: 'ShieldCheck',
-        category: 'ai-data',
+          'Streamlining development lifecycles with continuous integration, continuous deployment, and infrastructure automation.',
+        icon: 'Settings',
+        category: 'engineering',
         enabled: true,
       },
       {
-        id: 'ai-ml-data-services',
-        name: 'AI/ML Data Services',
-        shortDescription: 'Flexible data services for AI and machine learning projects.',
+        id: 'mlops',
+        name: 'MLOps',
+        shortDescription: 'Machine learning operations and lifecycle management.',
         description:
-          'Broader AI/ML data support including dataset curation, review, cleaning, and preparation for model pipelines.',
-        icon: 'Database',
-        category: 'ai-data',
+          'Deploying, monitoring, and maintaining machine learning models in production to ensure reliability and scalability.',
+        icon: 'Activity',
+        category: 'engineering',
         enabled: true,
       },
     ],
   },
   {
-    id: 'technology',
-    name: 'Technology & Development',
-    tagline: 'Built to Last, Built to Scale',
+    id: 'domains',
+    name: 'Domain Expertise',
+    tagline: 'Deep Industry Knowledge',
     description:
-      'End-to-end technology development services — from requirement analysis to deployment — built with scalability, maintainability, and clear communication.',
-    href: '/services/technology',
-    icon: 'Layers',
+      'Our consultancy brings specialized domain expertise to deliver tailored software solutions that solve complex, industry-specific challenges.',
+    href: '/services/domains',
+    icon: 'Briefcase',
     services: [
       {
-        id: 'it-projects',
-        name: 'IT Projects',
-        shortDescription: 'Technology project delivery from requirement to deployment.',
+        id: 'healthcare',
+        name: 'Healthcare',
+        shortDescription: 'HIPAA-compliant platforms and telehealth solutions.',
         description:
-          'Scoped and executed IT projects with clear requirement analysis, structured delivery, and post-launch support.',
-        icon: 'Monitor',
-        category: 'technology',
+          'Delivering secure, compliant, and patient-centric healthcare applications, from EHR integrations to telemedicine platforms.',
+        icon: 'HeartPulse',
+        category: 'domains',
         enabled: true,
       },
       {
-        id: 'web-development',
-        name: 'Web Development',
-        shortDescription: 'Professional, responsive web solutions built to your specification.',
+        id: 'agritech',
+        name: 'Agritech',
+        shortDescription: 'Smart farming and agricultural supply chain tech.',
         description:
-          'Custom web application and website development — designed for performance, accessibility, and maintainability.',
-        icon: 'Globe',
-        category: 'technology',
+          'Building technology solutions for agriculture, including IoT integrations, farm management systems, and yield prediction tools.',
+        icon: 'Sprout',
+        category: 'domains',
         enabled: true,
       },
       {
-        id: 'mobile-app-development',
-        name: 'Mobile App Development',
-        shortDescription: 'Cross-platform and native mobile applications.',
+        id: 'crm',
+        name: 'CRM Solutions',
+        shortDescription: 'Custom CRM and customer engagement platforms.',
         description:
-          'Mobile application development for iOS and Android, focused on user experience, performance, and post-launch support.',
-        icon: 'Smartphone',
-        category: 'technology',
+          'Designing and developing custom CRM systems to optimize sales pipelines, customer support, and operational workflows.',
+        icon: 'Users',
+        category: 'domains',
         enabled: true,
       },
       {
-        id: 'technology-solutions',
-        name: 'Technology Solutions',
-        shortDescription: 'Tailored technology solutions for your business requirements.',
+        id: 'warehouse-automation',
+        name: 'Warehouse Automation',
+        shortDescription: 'Robot-based warehouse management systems.',
         description:
-          'Technology architecture, integration, and solution development aligned to specific business and operational requirements.',
-        icon: 'Settings',
-        category: 'technology',
+          'Developing advanced WMS with robot-based automation, inventory tracking, and logistics optimization.',
+        icon: 'Package',
+        category: 'domains',
+        enabled: true,
+      },
+      {
+        id: 'mortgage-finance',
+        name: 'Mortgage Finance',
+        shortDescription: 'Fintech solutions for lending and mortgage.',
+        description:
+          'Creating secure, scalable financial software for mortgage processing, lending workflows, and risk assessment.',
+        icon: 'Landmark',
+        category: 'domains',
         enabled: true,
       },
     ],
@@ -212,7 +162,7 @@ export const getAllServices = () =>
   serviceCategories.flatMap((cat) => cat.services.filter((s) => s.enabled));
 
 // Helper to get services by category
-export const getServicesByCategory = (categoryId: 'ai-data' | 'technology') =>
+export const getServicesByCategory = (categoryId: 'engineering' | 'domains') =>
   serviceCategories
     .find((c) => c.id === categoryId)
     ?.services.filter((s) => s.enabled) ?? [];

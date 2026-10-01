@@ -8,11 +8,11 @@ import { Reveal } from '@/components/ui/Reveal';
 import { Brain, Shield, RefreshCw, Lightbulb, Globe2 } from 'lucide-react';
 
 const brandPrinciples = [
-  { letter: 'I', label: 'Intelligent', sub: 'We think deeper', icon: Brain, color: 'var(--color-blue-primary)' },
-  { letter: 'S', label: 'Strong', sub: 'We build to last', icon: Shield, color: 'var(--color-blue-electric)' },
-  { letter: 'E', label: 'Evolving', sub: 'We grow continuously', icon: RefreshCw, color: 'var(--color-cyan-accent)' },
-  { letter: 'C', label: 'Creative', sub: 'We turn ideas into impact', icon: Lightbulb, color: '#f59e0b' },
-  { letter: 'G', label: 'Global', sub: 'We work without borders', icon: Globe2, color: '#10b981' },
+  { letter: 'E', label: 'Expert Teams', sub: 'Senior engineers across every stack', icon: Brain, color: 'var(--color-blue-primary)' },
+  { letter: 'D', label: 'Domain Depth', sub: 'Real experience in your industry', icon: Shield, color: 'var(--color-blue-electric)' },
+  { letter: 'A', label: 'Agile & Fast', sub: 'We ship, iterate, and improve quickly', icon: RefreshCw, color: 'var(--color-cyan-accent)' },
+  { letter: 'P', label: 'Problem Solvers', sub: 'We own the outcome, not just the task', icon: Lightbulb, color: '#f59e0b' },
+  { letter: 'G', label: 'Global Standard', sub: 'US-grade quality, delivered remotely', icon: Globe2, color: '#10b981' },
 ];
 
 export function WhyRaveronSection() {
@@ -38,9 +38,9 @@ export function WhyRaveronSection() {
             <SectionHeading
               id="why-heading"
               eyebrow="Why RAVERON"
-              title="A company you can"
-              titleHighlight="build on."
-              description="Five principles guide how we work, how we build our teams, and how we deliver for our clients."
+              title="A partner you can"
+              titleHighlight="trust to deliver."
+              description="Five core values that define how we engage clients, build products, and ensure your project exceeds expectations."
             />
 
             <style>{`
@@ -153,7 +153,7 @@ export function WhyRaveronSection() {
             <Reveal delay={0.2}>
               <p className="label" style={{ color: 'var(--color-cool-gray)', marginBottom: '1.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
                 <span style={{ width: '8px', height: '8px', borderRadius: '50%', background: 'var(--color-cyan-accent)', display: 'inline-block' }} />
-                Workforce & Talent
+                Consulting Strengths
               </p>
             </Reveal>
 

@@ -1,5 +1,5 @@
 // ============================================================
-// RAVERON TECHNOLOGIES — Navigation Configuration
+// RAVERON TECHNOLOGIES â€” Navigation Configuration
 // ============================================================
 
 export interface NavItem {
@@ -17,14 +17,14 @@ export const mainNav: NavItem[] = [
     href: '/services',
     children: [
       {
-        label: 'AI & Data Services',
-        href: '/services/ai-data',
-        description: 'Data annotation, labeling, AI training, document processing and more.',
+        label: 'Engineering Services',
+        href: '/services/engineering',
+        description: 'Full stack, Flutter, DevOps, Cloud, MLOps, and Agentic AI development.',
       },
       {
-        label: 'Technology & Development',
-        href: '/services/technology',
-        description: 'Web development, mobile apps, IT projects and technology solutions.',
+        label: 'Domain Expertise',
+        href: '/services/domains',
+        description: 'Healthcare, Agritech, CRM, Warehouse Management, and Mortgage Finance.',
       },
     ],
   },
@@ -45,8 +45,8 @@ export const footerNav = {
     { label: 'Contact', href: '/contact' },
   ],
   services: [
-    { label: 'AI & Data Services', href: '/services/ai-data' },
-    { label: 'Technology & Development', href: '/services/technology' },
+    { label: 'Engineering Services', href: '/services/engineering' },
+    { label: 'Domain Expertise', href: '/services/domains' },
   ],
   legal: [
     { label: 'Privacy Policy', href: '/privacy' },
@@ -54,3 +54,4 @@ export const footerNav = {
     { label: 'Cookie Policy', href: '/cookies' },
   ],
 };
+

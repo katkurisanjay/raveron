@@ -13,13 +13,13 @@ import {
 } from 'lucide-react';
 
 const steps = [
-  { num: '01', icon: Search, label: 'Understand', desc: 'We review your project description, formats, data types, and delivery requirements to establish a clear picture of the scope.' },
-  { num: '02', icon: Target, label: 'Scope', desc: 'We define the project boundaries — volume, timeline, resource needs, quality standards, and any platform or tool requirements.' },
-  { num: '03', icon: Map, label: 'Plan', desc: 'We structure the workflow — team formation, training requirements, review stages, communication plan, and delivery milestones.' },
-  { num: '04', icon: Zap, label: 'Execute', desc: 'Assigned teams begin work following project guidelines, with dedicated leads overseeing progress and quality at every stage.' },
-  { num: '05', icon: CheckCircle2, label: 'Validate', desc: 'Output passes through multi-stage quality review and consistency checks before it is prepared for delivery.' },
-  { num: '06', icon: Package, label: 'Deliver', desc: 'Completed work is delivered in the agreed format, with a clear summary and any documentation required.' },
-  { num: '07', icon: TrendingUp, label: 'Improve', desc: 'Client feedback is captured and applied — improving processes, guidelines, and team calibration for ongoing work.' },
+  { num: '01', icon: Search, label: 'Discover', desc: 'We begin with a deep-dive into your project requirements, technical stack, business goals, and success criteria to align on scope from day one.' },
+  { num: '02', icon: Target, label: 'Scope & Propose', desc: 'We define timelines, team composition, milestones, and cost estimates — fully transparent and aligned to your budget.' },
+  { num: '03', icon: Map, label: 'Assemble Team', desc: 'The right engineers and domain experts are assigned to your project based on the specific tech stack and industry context required.' },
+  { num: '04', icon: Zap, label: 'Sprint & Build', desc: 'Agile delivery with regular check-ins, demos, and progress updates. We integrate with your tools and communication channels.' },
+  { num: '05', icon: CheckCircle2, label: 'Review & QA', desc: 'Every deliverable is reviewed against spec before it reaches you — code reviews, QA testing, and compliance checks included.' },
+  { num: '06', icon: Package, label: 'Deploy & Handoff', desc: 'Smooth production deployment with full documentation, knowledge transfer, and post-launch support included.' },
+  { num: '07', icon: TrendingUp, label: 'Grow Together', desc: 'We stay engaged — scaling teams, adding features, or optimizing performance as your product grows and evolves.' },
 ];
 
 export function HowWeWorkSection() {
@@ -52,9 +52,9 @@ export function HowWeWorkSection() {
         <SectionHeading
           id="how-heading"
           eyebrow="How We Work"
-          title="A structured process"
-          titleHighlight="from start to finish."
-          description="Every engagement follows a consistent methodology designed to minimise risk, maintain quality, and keep communication clear throughout."
+          title="Transparent process,"
+          titleHighlight="every step."
+          description="From initial discovery through deployment and growth — our structured engagement model keeps you in control and removes uncertainty."
           align="center"
           light
         />

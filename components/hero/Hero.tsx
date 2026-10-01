@@ -3,7 +3,7 @@
 import { useEffect, useRef } from 'react';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
-import { ArrowRight, ChevronDown } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 import { HeroVisual } from './HeroVisual';
 
 export function Hero() {
@@ -84,7 +84,7 @@ export function Hero() {
         }} />
       </div>
 
-      <div className="container" style={{ position: 'relative', zIndex: 1, paddingBlock: '5rem 4rem' }}>
+      <div className="container" style={{ position: 'relative', zIndex: 1, paddingBlock: '2rem 1rem' }}>
         <div style={{
           display: 'grid',
           gridTemplateColumns: '1fr',
@@ -113,24 +113,24 @@ export function Hero() {
                 background: 'var(--color-blue-electric)',
               }} />
               <span className="eyebrow" style={{ color: 'var(--color-blue-electric)' }}>
-                RAVERON TECHNOLOGIES
+                RAVERON — Tech Consultants
               </span>
             </span>
 
             {/* Headline */}
             <h1
               ref={headlineRef}
-              className="display-2xl"
+              className="display-lg"
               style={{
                 color: 'var(--color-white)',
-                marginBottom: '1.5rem',
+                marginBottom: '1rem',
                 opacity: 0,
               }}
             >
-              Think Deeper.{' '}
-              <span style={{ display: 'block' }}>Build Stronger.</span>
+              <span style={{ color: 'var(--color-cyan-accent)' }}>Forward Deployed Engineers.</span>{' '}
+              <span style={{ display: 'block' }}>Deep Domain Expertise.</span>
               <span className="text-gradient-blue" style={{ display: 'block' }}>
-                Evolve Further.
+                Engineering Excellence.
               </span>
             </h1>
 
@@ -145,9 +145,9 @@ export function Hero() {
                 opacity: 0,
               }}
             >
-              RAVERON provides professional AI & data services — data annotation, image & video labeling,
-              AI training data, document processing — alongside technology solutions including
-              web development, mobile apps, and IT project delivery.
+              RAVERON provides world-class technology consulting and freelance engineering services. 
+              From Full Stack & Mobile to Cloud, DevOps, and Agentic AI, our experts deliver 
+              scalable solutions tailored for Healthcare, Finance, Agritech, and Logistics.
             </p>
 
             {/* CTA group */}
@@ -162,13 +162,13 @@ export function Hero() {
             >
               <motion.div whileHover={{ scale: 1.02, y: -1 }} whileTap={{ scale: 0.98 }}>
                 <Link href="/start-a-project" className="btn btn-primary btn-lg">
-                  Start a Project
+                  Hire Our Team
                   <ArrowRight size={17} />
                 </Link>
               </motion.div>
               <motion.div whileHover={{ scale: 1.02, y: -1 }} whileTap={{ scale: 0.98 }}>
                 <Link href="/services" className="btn btn-secondary btn-lg">
-                  Explore Services
+                  View Capabilities
                 </Link>
               </motion.div>
             </div>
@@ -184,26 +184,7 @@ export function Hero() {
         </div>
       </div>
 
-      {/* Scroll indicator */}
-      <motion.div
-        aria-hidden="true"
-        animate={{ y: [0, 6, 0] }}
-        transition={{ repeat: Infinity, duration: 2, ease: 'easeInOut' }}
-        style={{
-          position: 'absolute',
-          bottom: '2rem',
-          left: '50%',
-          transform: 'translateX(-50%)',
-          display: 'flex',
-          flexDirection: 'column',
-          alignItems: 'center',
-          gap: '0.25rem',
-          color: 'rgba(255,255,255,0.3)',
-        }}
-      >
-        <span style={{ fontSize: '0.6875rem', letterSpacing: '0.1em', textTransform: 'uppercase' }}>Scroll</span>
-        <ChevronDown size={16} />
-      </motion.div>
+
 
       <style>{`
         @media (min-width: 1024px) {

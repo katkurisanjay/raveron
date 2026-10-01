@@ -62,9 +62,9 @@ export function CompanyIntroSection() {
           <div style={{ position: 'relative' }}>
             <SectionHeading
               eyebrow="Who We Are"
-              title="A technology company built to"
-              titleHighlight="support your work."
-              description="RAVERON TECHNOLOGIES operates across two capability areas — AI & Data Services and Technology & Development — providing professional, structured delivery for business requirements of all scales."
+              title="A premier engineering consultancy"
+              titleHighlight="for enterprises."
+              description="RAVERON TECHNOLOGIES operates as an elite technology partner — delivering full stack applications, AI solutions, and specialized domain expertise to drive your business forward."
             />
 
             <Reveal delay={0.2}>
@@ -87,10 +87,8 @@ export function CompanyIntroSection() {
                 }} />
 
                 <p className="body-md" style={{ color: 'var(--color-cool-gray)', lineHeight: 1.85, fontSize: '1.0625rem' }}>
-                  Whether you need data annotation for a machine learning pipeline, AI training datasets,
-                  document processing at scale, or technology solutions built from the ground up —
-                  <strong style={{ color: 'var(--color-navy-deep)', fontWeight: 600 }}> RAVERON </strong> provides the teams, processes, and expertise to support your project
-                  from requirement through delivery.
+                  Whether you need an intelligent Agentic AI system, a scalable Flutter mobile application, or a robust Cloud architecture — 
+                  <strong style={{ color: 'var(--color-navy-deep)', fontWeight: 600 }}> RAVERON </strong> provides the highly experienced teams and proven industry expertise (Healthcare, Agritech, FinTech) to ensure your project's success.
                 </p>
               </div>
             </Reveal>

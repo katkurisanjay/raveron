@@ -21,21 +21,20 @@ export function QualitySection() {
         }}
         className="quality-grid"
         >
-          {/* Left — heading */}
           <div>
             <SectionHeading
               id="quality-heading"
-              eyebrow="Quality & Reliability"
-              title="Every output."
-              titleHighlight="Reviewed."
-              description="Structured workflows, multi-stage review, and client feedback loops ensure that what we deliver is consistent, accurate, and aligned to your requirements."
+              eyebrow="Quality & Standards"
+              title="Engineering grade."
+              titleHighlight="Production ready."
+              description="We don't just write code — we engineer solutions. Every deliverable is architected for scalability, maintainability, and security from day one."
             />
 
             <div style={{ marginTop: '2rem' }}>
               <p className="body-md" style={{ color: 'var(--color-cool-gray)', lineHeight: 1.8 }}>
-                Quality is not a final step — it is built into the workflow. From guideline-driven
-                execution through review stages and calibration cycles, every deliverable is
-                checked before it reaches you.
+                Rigorous code reviews, automated testing pipelines, and security-first practices 
+                ensure that what we ship is production-grade. We follow US engineering standards 
+                and document everything for seamless knowledge transfer.
               </p>
             </div>
           </div>

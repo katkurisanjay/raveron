@@ -23,31 +23,39 @@ export function HeroVisual() {
     canvas.style.height = `${SIZE}px`;
     ctx.scale(dpr, dpr);
 
-    // Node network
+    // Neural Network Layers
     interface Node {
       x: number; y: number;
-      vx: number; vy: number;
+      baseX: number; baseY: number;
       r: number;
       type: 'data' | 'annotation' | 'output';
+      layerIndex: number;
     }
 
-    const nodes: Node[] = [
-      { x: 240, y: 140, vx: 0.3, vy: 0.2, r: 6, type: 'data' },
-      { x: 140, y: 220, vx: -0.2, vy: 0.35, r: 5, type: 'annotation' },
-      { x: 340, y: 200, vx: 0.25, vy: -0.3, r: 5, type: 'annotation' },
-      { x: 180, y: 320, vx: -0.15, vy: -0.2, r: 4, type: 'output' },
-      { x: 310, y: 310, vx: 0.2, vy: 0.15, r: 4, type: 'output' },
-      { x: 90, y: 150, vx: 0.4, vy: 0.1, r: 3, type: 'data' },
-      { x: 390, y: 140, vx: -0.35, vy: 0.25, r: 3, type: 'annotation' },
-      { x: 240, y: 360, vx: 0.1, vy: -0.3, r: 5, type: 'output' },
-      { x: 120, y: 390, vx: 0.3, vy: -0.15, r: 3, type: 'data' },
-      { x: 380, y: 370, vx: -0.25, vy: -0.1, r: 3, type: 'annotation' },
-    ];
+    const layers = [3, 5, 5, 2];
+    const xPos = [80, 190, 300, 410];
+    const nodes: Node[] = [];
+    
+    layers.forEach((nodeCount, lIndex) => {
+      const x = xPos[lIndex];
+      const spacingY = 360 / (nodeCount + 1);
+      for (let i = 0; i < nodeCount; i++) {
+        const y = 60 + spacingY * (i + 1);
+        const type = lIndex === 0 ? 'data' : (lIndex === layers.length - 1 ? 'output' : 'annotation');
+        nodes.push({
+          x, y,
+          baseX: x, baseY: y,
+          r: lIndex === 0 || lIndex === layers.length - 1 ? 5 : 4,
+          type,
+          layerIndex: lIndex,
+        });
+      }
+    });
 
     const colors = {
-      data:       { stroke: '#2563EB', fill: 'rgba(37,99,235,0.15)', glow: 'rgba(37,99,235,0.4)' },
-      annotation: { stroke: '#06B6D4', fill: 'rgba(6,182,212,0.12)', glow: 'rgba(6,182,212,0.35)' },
-      output:     { stroke: '#3B82F6', fill: 'rgba(59,130,246,0.1)',  glow: 'rgba(59,130,246,0.3)' },
+      data:       { stroke: '#2563EB', fill: 'rgba(37,99,235,0.15)' },
+      annotation: { stroke: '#06B6D4', fill: 'rgba(6,182,212,0.12)' },
+      output:     { stroke: '#3B82F6', fill: 'rgba(59,130,246,0.1)' },
     };
 
     const draw = (time: number) => {
@@ -55,66 +63,63 @@ export function HeroVisual() {
       timeRef.current = time;
       const t = time * 0.001;
 
-      // Update node positions
-      nodes.forEach((n) => {
-        n.x += n.vx;
-        n.y += n.vy;
-        if (n.x < 20 || n.x > SIZE - 20) n.vx *= -1;
-        if (n.y < 20 || n.y > SIZE - 20) n.vy *= -1;
+      // Float nodes slightly
+      nodes.forEach((n, i) => {
+        n.x = n.baseX + Math.sin(t * 0.8 + i) * 6;
+        n.y = n.baseY + Math.cos(t * 0.9 + i) * 6;
       });
 
-      // Draw connections
-      for (let i = 0; i < nodes.length; i++) {
-        for (let j = i + 1; j < nodes.length; j++) {
-          const dx = nodes[i].x - nodes[j].x;
-          const dy = nodes[i].y - nodes[j].y;
-          const dist = Math.sqrt(dx * dx + dy * dy);
-          const maxDist = 180;
-
-          if (dist < maxDist) {
-            const alpha = (1 - dist / maxDist) * 0.35;
+      // Draw Neural Network connections
+      nodes.forEach((n1) => {
+        nodes.forEach((n2) => {
+          if (n2.layerIndex === n1.layerIndex + 1) {
             ctx.beginPath();
-            ctx.moveTo(nodes[i].x, nodes[i].y);
-            ctx.lineTo(nodes[j].x, nodes[j].y);
-            ctx.strokeStyle = `rgba(59,130,246,${alpha})`;
+            ctx.moveTo(n1.x, n1.y);
+            ctx.lineTo(n2.x, n2.y);
+            const flow = Math.sin(t * 2 - n1.layerIndex * 0.5) * 0.5 + 0.5;
+            ctx.strokeStyle = `rgba(6,182,212,${0.08 + flow * 0.15})`;
             ctx.lineWidth = 1;
             ctx.stroke();
           }
-        }
-      }
+        });
+      });
 
-      // Floating data packets along lines
-      nodes.forEach((n, i) => {
-        if (i % 3 === 0) {
-          const target = nodes[(i + 1) % nodes.length];
-          const prog = (Math.sin(t + i) * 0.5 + 0.5);
-          const px = n.x + (target.x - n.x) * prog;
-          const py = n.y + (target.y - n.y) * prog;
+      // Data packets flowing through layers
+      nodes.forEach((n1, i) => {
+        const nextLayerNodes = nodes.filter(n => n.layerIndex === n1.layerIndex + 1);
+        if (nextLayerNodes.length > 0) {
+          const targetIndex = (i + Math.floor(t * 2)) % nextLayerNodes.length;
+          const target = nextLayerNodes[targetIndex];
+          const prog = (t * 0.8 + i * 0.25) % 1; 
+          const px = n1.x + (target.x - n1.x) * prog;
+          const py = n1.y + (target.y - n1.y) * prog;
+          
           ctx.beginPath();
           ctx.arc(px, py, 2.5, 0, Math.PI * 2);
-          ctx.fillStyle = 'rgba(6,182,212,0.8)';
+          ctx.fillStyle = 'rgba(37,99,235,0.8)';
+          ctx.shadowBlur = 8;
+          ctx.shadowColor = 'rgba(37,99,235,0.8)';
           ctx.fill();
+          ctx.shadowBlur = 0;
         }
       });
 
-      // Draw nodes
+      // Draw neural net nodes
       nodes.forEach((n) => {
         const c = colors[n.type];
-        const pulse = Math.sin(t * 1.5 + n.x * 0.05) * 0.3 + 0.7;
-
-    const glowAlpha = { data: 0.25, annotation: 0.22, output: 0.2 };
+        const pulse = Math.sin(t * 2 + n.y * 0.05) * 0.3 + 0.7;
+        const glowAlpha = { data: 0.25, annotation: 0.22, output: 0.2 };
         const glowChannels = { data: '37,99,235', annotation: '6,182,212', output: '59,130,246' };
 
-        // Glow
         const grad = ctx.createRadialGradient(n.x, n.y, 0, n.x, n.y, n.r * 4);
         grad.addColorStop(0, `rgba(${glowChannels[n.type]},${(glowAlpha[n.type] * pulse).toFixed(2)})`);
         grad.addColorStop(1, 'rgba(0,0,0,0)');
+        
         ctx.beginPath();
         ctx.arc(n.x, n.y, n.r * 4, 0, Math.PI * 2);
         ctx.fillStyle = grad;
         ctx.fill();
 
-        // Fill
         ctx.beginPath();
         ctx.arc(n.x, n.y, n.r, 0, Math.PI * 2);
         ctx.fillStyle = c.fill;
@@ -123,30 +128,26 @@ export function HeroVisual() {
         ctx.fill();
         ctx.stroke();
 
-        // Inner dot
         ctx.beginPath();
         ctx.arc(n.x, n.y, n.r * 0.35, 0, Math.PI * 2);
         ctx.fillStyle = c.stroke;
         ctx.fill();
       });
 
-      // Central hub ring
+      // Central RAVERON text with pulsing glow
       const cx = SIZE / 2, cy = SIZE / 2;
-      const ringR = 60 + Math.sin(t * 0.5) * 4;
-      ctx.beginPath();
-      ctx.arc(cx, cy, ringR, 0, Math.PI * 2);
-      ctx.strokeStyle = 'rgba(37,99,235,0.15)';
-      ctx.lineWidth = 1;
-      ctx.setLineDash([4, 8]);
-      ctx.stroke();
-      ctx.setLineDash([]);
-
-      // Rotating arc
-      ctx.beginPath();
-      ctx.arc(cx, cy, ringR, t * 0.8, t * 0.8 + Math.PI * 0.6);
-      ctx.strokeStyle = 'rgba(6,182,212,0.5)';
-      ctx.lineWidth = 2;
-      ctx.stroke();
+      ctx.save();
+      ctx.textAlign = 'center';
+      ctx.textBaseline = 'middle';
+      ctx.font = 'bold 20px Inter, system-ui, sans-serif';
+      
+      const textPulse = 0.7 + Math.sin(t * 1.5) * 0.3;
+      ctx.fillStyle = `rgba(255, 255, 255, ${textPulse})`;
+      ctx.shadowBlur = 15;
+      ctx.shadowColor = `rgba(6,182,212,${textPulse * 0.8})`;
+      
+      ctx.fillText('R A V E R O N', cx, cy);
+      ctx.restore();
 
       animRef.current = requestAnimationFrame(draw);
     };
