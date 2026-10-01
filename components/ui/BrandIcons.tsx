@@ -21,8 +21,13 @@ export function InstagramIcon(props: React.SVGProps<SVGSVGElement>) {
           <stop offset="1" stopColor="#4f5bd5" />
         </linearGradient>
       </defs>
-      <rect width="24" height="24" rx="4" fill="url(#ig-grad)" />
-      <path d="M12 7.16c-2.67 0-4.84 2.17-4.84 4.84s2.17 4.84 4.84 4.84 4.84-2.17 4.84-4.84-2.17-4.84-4.84-4.84zm0 8c-1.74 0-3.16-1.42-3.16-3.16S10.26 8.84 12 8.84s3.16 1.42 3.16 3.16-1.42 3.16-3.16 3.16zm3.32-6.5a1.1 1.1 0 110-2.2 1.1 1.1 0 010 2.2zM16.5 6H7.5A4.5 4.5 0 003 10.5v3A4.5 4.5 0 007.5 18h9a4.5 4.5 0 004.5-4.5v-3A4.5 4.5 0 0016.5 6zM19.32 13.5c0 1.55-1.27 2.82-2.82 2.82H7.5c-1.55 0-2.82-1.27-2.82-2.82v-3c0-1.55 1.27-2.82 2.82-2.82h9c1.55 0 2.82 1.27 2.82 2.82v3z" fill="#fff" />
+      <rect width="24" height="24" rx="5" fill="url(#ig-grad)" />
+      {/* Outer rounded square border */}
+      <rect x="4" y="4" width="16" height="16" rx="4" stroke="#fff" strokeWidth="1.5" fill="none" />
+      {/* Centre circle (camera lens) */}
+      <circle cx="12" cy="12" r="3.5" stroke="#fff" strokeWidth="1.5" fill="none" />
+      {/* Viewfinder dot */}
+      <circle cx="16.5" cy="7.5" r="1" fill="#fff" />
     </svg>
   );
 }
@@ -31,7 +36,9 @@ export function WhatsappIcon(props: React.SVGProps<SVGSVGElement>) {
   return (
     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" {...props}>
       <rect width="24" height="24" rx="4" fill="#25D366" />
+      {/* Outer speech bubble */}
       <path d="M12.04 5a7.06 7.06 0 0 0-6.07 10.66L5 19l3.47-.9A7.05 7.05 0 0 0 19.1 12.05 7.06 7.06 0 0 0 12.04 5z" fill="#fff" />
+      {/* Inner phone handset detail — must be green so it appears as a cut-out */}
       <path d="M14.9 13.98c-.16-.08-1.01-.5-1.16-.56-.16-.05-.27-.08-.39.1-.11.17-.44.55-.54.67-.1.11-.2.12-.36.04-.15-.08-.72-.27-1.37-.85-.5-.45-.85-1-1-1.16-.14-.17 0-.25.07-.34.07-.07.16-.19.24-.29.08-.1.11-.16.16-.27.05-.11.03-.22-.01-.3-.04-.08-.39-.93-.53-1.28-.14-.33-.28-.29-.39-.29l-.33-.01c-.13 0-.34.04-.52.23-.18.2-1.03 1.01-1.03 2.45 0 1.45.89 2.87 1.01 3.03.13.17 1.95 3.09 4.87 4.21 1.76.67 2.38.73 3.19.61.64-.09 1.95-.8 2.22-1.57.28-.77.28-1.43.19-1.57-.08-.13-.3-.21-.46-.29z" fill="#25D366" />
     </svg>
   );
