@@ -16,7 +16,7 @@ export const siteConfig = {
     email: 'raverontechnologies@gmail.com',
     phones: [] as string[],
     whatsapp: '',
-    address: 'Raveron Technologies, US & Global Consulting',
+    address: 'Raveron Technologies, Warangal, 506002',
   },
 
   // Social
