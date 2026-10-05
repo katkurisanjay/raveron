@@ -2,13 +2,13 @@ import type { Metadata } from 'next';
 import { siteConfig } from '@/config/site';
 import { Hero } from '@/components/hero/Hero';
 import { CompanyIntroSection } from '@/components/sections/CompanyIntroSection';
-import { CoreCapabilitiesSection } from '@/components/sections/CoreCapabilitiesSection';
+
 import { EngineeringServicesSection, DomainExpertiseSection } from '@/components/sections/ServicesSections';
 import { WhyRaveronSection } from '@/components/sections/WhyRaveronSection';
 import { HowWeWorkSection } from '@/components/sections/HowWeWorkSection';
 import { CareersPreviewSection } from '@/components/sections/CareersPreviewSection';
 import { CTASection } from '@/components/sections/CTASection';
-import { PortfolioSection } from '@/components/sections/PortfolioSection';
+import { PortfolioSection, TestimonialsSection } from '@/components/sections/PortfolioSection';
 
 export const metadata: Metadata = {
   title: 'Expert Technology Consultants & Engineering Partners | RAVERON',
@@ -37,9 +37,9 @@ export default function HomePage() {
       <Hero />
       <CompanyIntroSection />
       <PortfolioSection />
-      <CoreCapabilitiesSection />
       <EngineeringServicesSection />
       <DomainExpertiseSection />
+      <TestimonialsSection />
       <WhyRaveronSection />
       <HowWeWorkSection />
       <CareersPreviewSection />

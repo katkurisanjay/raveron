@@ -1,11 +1,9 @@
 'use client';
 
 import { SectionHeading } from '@/components/ui/SectionHeading';
-import { StrengthGrid } from '@/components/strengths/StrengthCard';
-import { getStrengths } from '@/config/strengths';
-import { siteConfig } from '@/config/site';
+import { serviceCategories } from '@/config/services';
 import { Reveal } from '@/components/ui/Reveal';
-import { Brain, Shield, RefreshCw, Lightbulb, Globe2 } from 'lucide-react';
+import { Brain, Shield, RefreshCw, Lightbulb, Globe2, Code2, Smartphone, Cloud, BrainCircuit, Settings, Activity, HeartPulse, Sprout, Users, Package, Landmark } from 'lucide-react';
 
 const brandPrinciples = [
   { letter: 'E', label: 'Expert Teams', sub: 'Senior engineers across every stack', icon: Brain, color: 'var(--color-blue-primary)' },
@@ -15,13 +13,12 @@ const brandPrinciples = [
   { letter: 'G', label: 'Global Standard', sub: 'US-grade quality, delivered remotely', icon: Globe2, color: '#10b981' },
 ];
 
-export function WhyRaveronSection() {
-  const workforceStrengths = getStrengths({
-    group: 'workforce',
-    showUnconfirmed: siteConfig.features.showUnconfirmedContent,
-    limit: 6,
-  });
+const iconMap: Record<string, React.ElementType> = {
+  Code2, Smartphone, Cloud, BrainCircuit, Settings, Activity,
+  HeartPulse, Sprout, Users, Package, Landmark,
+};
 
+export function WhyRaveronSection() {
   return (
     <section className="section theme-soft" aria-labelledby="why-heading" style={{ overflow: 'hidden' }}>
       <div className="container">
@@ -148,7 +145,7 @@ export function WhyRaveronSection() {
             </div>
           </div>
 
-          {/* Right Column — Workforce strengths */}
+          {/* Right Column — Consulting Strengths (Capabilities) */}
           <div>
             <Reveal delay={0.2}>
               <p className="label" style={{ color: 'var(--color-cool-gray)', marginBottom: '1.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
@@ -157,82 +154,94 @@ export function WhyRaveronSection() {
               </p>
             </Reveal>
 
-            {workforceStrengths.length > 0 ? (
-              <StrengthGrid strengths={workforceStrengths} dark={false} columns={2} />
-            ) : (
-              /* Creative Animated Placeholder */
-              <Reveal delay={0.3}>
-                <div style={{
-                  position: 'relative',
-                  padding: '3rem 2rem',
-                  borderRadius: 'var(--radius-2xl)',
-                  background: 'linear-gradient(135deg, rgba(255,255,255,1) 0%, rgba(245,247,250,1) 100%)',
-                  border: '1px solid var(--color-border-light)',
-                  boxShadow: '0 20px 40px rgba(0,0,0,0.02)',
-                  overflow: 'hidden',
-                  display: 'flex',
-                  flexDirection: 'column',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  textAlign: 'center',
-                  minHeight: '400px',
-                }}>
-                  {/* Blueprint Grid Background Pattern */}
-                  <div style={{
-                    position: 'absolute',
-                    inset: 0,
-                    backgroundImage: 'radial-gradient(var(--color-border-dark) 1px, transparent 1px)',
-                    backgroundSize: '24px 24px',
-                    opacity: 0.1,
-                    zIndex: 0
-                  }} />
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '1.75rem' }}>
+              {serviceCategories.map((cat, catIdx) => {
+                const catColors = catIdx === 0
+                  ? { accent: 'var(--color-blue-electric)', bg: 'rgba(37,99,235,0.05)', border: 'rgba(37,99,235,0.15)' }
+                  : { accent: 'var(--color-cyan-accent)', bg: 'rgba(0,212,255,0.05)', border: 'rgba(0,212,255,0.15)' };
 
-                  {/* Shimmering pulse orb */}
-                  <div style={{
-                    position: 'absolute',
-                    width: '150px',
-                    height: '150px',
-                    background: 'var(--color-cyan-accent)',
-                    borderRadius: '50%',
-                    filter: 'blur(60px)',
-                    opacity: 0.15,
-                    animation: 'pulse-orb 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
-                    zIndex: 0
-                  }} />
-
-                  <style>{`
-                    @keyframes pulse-orb {
-                      0%, 100% { transform: scale(1); opacity: 0.15; }
-                      50% { transform: scale(1.5); opacity: 0.25; }
-                    }
-                  `}</style>
-
-                  <div style={{ position: 'relative', zIndex: 1, display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+                return (
+                  <Reveal key={cat.id} delay={0.15 + catIdx * 0.1}>
                     <div style={{
-                      width: '64px',
-                      height: '64px',
-                      borderRadius: '50%',
-                      background: 'rgba(0, 119, 255, 0.05)',
-                      display: 'flex',
-                      alignItems: 'center',
-                      justifyContent: 'center',
-                      marginBottom: '1.5rem',
-                      color: 'var(--color-blue-primary)',
+                      borderRadius: 'var(--radius-xl)',
+                      border: `1px solid ${catColors.border}`,
+                      background: catColors.bg,
+                      overflow: 'hidden',
                     }}>
-                      <Brain size={32} strokeWidth={1.5} />
+                      {/* Card header */}
+                      <div style={{
+                        padding: '1rem 1.5rem',
+                        borderBottom: `1px solid ${catColors.border}`,
+                        display: 'flex',
+                        alignItems: 'center',
+                        gap: '0.625rem',
+                      }}>
+                        <span style={{
+                          fontSize: '0.7rem',
+                          fontWeight: 800,
+                          letterSpacing: '0.1em',
+                          textTransform: 'uppercase',
+                          color: catColors.accent,
+                        }}>
+                          {catIdx === 0 ? 'Engineering & Tech' : 'Domain Expertise'}
+                        </span>
+                      </div>
+
+                      {/* Service pills grid */}
+                      <div style={{
+                        padding: '1.25rem 1.5rem',
+                        display: 'flex',
+                        flexWrap: 'wrap',
+                        gap: '0.625rem',
+                      }}>
+                        {cat.services.map((svc) => {
+                          const Icon = iconMap[svc.icon] ?? Code2;
+                          return (
+                            <div
+                              key={svc.id}
+                              title={svc.shortDescription}
+                              style={{
+                                display: 'flex',
+                                alignItems: 'center',
+                                gap: '0.4rem',
+                                padding: '0.375rem 0.875rem',
+                                borderRadius: '999px',
+                                background: 'var(--color-white)',
+                                border: `1px solid ${catColors.border}`,
+                                fontSize: '0.8125rem',
+                                fontWeight: 600,
+                                color: 'var(--color-navy-deep)',
+                                whiteSpace: 'nowrap',
+                                transition: 'box-shadow 0.2s ease, transform 0.2s ease',
+                                cursor: 'default',
+                              }}
+                              onMouseEnter={e => {
+                                (e.currentTarget as HTMLElement).style.boxShadow = `0 4px 14px rgba(0,0,0,0.08)`;
+                                (e.currentTarget as HTMLElement).style.transform = 'translateY(-2px)';
+                              }}
+                              onMouseLeave={e => {
+                                (e.currentTarget as HTMLElement).style.boxShadow = 'none';
+                                (e.currentTarget as HTMLElement).style.transform = 'translateY(0)';
+                              }}
+                            >
+                              <Icon size={13} color={catColors.accent} strokeWidth={2} />
+                              {svc.name}
+                            </div>
+                          );
+                        })}
+                      </div>
+
+                      {/* Description footer */}
+                      <div style={{ padding: '0 1.5rem 1.25rem' }}>
+                        <p style={{ fontSize: '0.8125rem', color: 'var(--color-cool-gray)', lineHeight: 1.6 }}>
+                          {cat.description}
+                        </p>
+                      </div>
                     </div>
-                    
-                    <h4 style={{ fontSize: '1.25rem', fontWeight: 700, color: 'var(--color-navy-deep)', marginBottom: '0.75rem' }}>
-                      Capabilities forming
-                    </h4>
-                    
-                    <p style={{ fontSize: '0.9375rem', color: 'var(--color-cool-gray)', lineHeight: 1.6, maxWidth: '280px' }}>
-                      Workforce capabilities and specific talent metrics will be displayed here once confirmed and calibrated.
-                    </p>
-                  </div>
-                </div>
-              </Reveal>
-            )}
+                  </Reveal>
+                );
+              })}
+            </div>
           </div>
         </div>
       </div>

@@ -156,13 +156,8 @@ const testimonials = [
 
 export function PortfolioSection() {
   const [activeProject, setActiveProject] = useState(0);
-  const [testimonialIndex, setTestimonialIndex] = useState(0);
-
-  const prev = () => setTestimonialIndex((i) => (i - 1 + testimonials.length) % testimonials.length);
-  const next = () => setTestimonialIndex((i) => (i + 1) % testimonials.length);
 
   const p = projects[activeProject];
-  const t = testimonials[testimonialIndex];
   const Icon = p.Icon;
 
   return (
@@ -400,13 +395,19 @@ export function PortfolioSection() {
           </Reveal>
         </div>
       </section>
+    </>
+  );
+}
 
-      {/* ── TESTIMONIALS ─────────────────────────────────────── */}
-      <section
-        className="section"
-        aria-labelledby="testimonials-heading"
-        style={{ background: 'white', position: 'relative', overflow: 'hidden' }}
-      >
+export function TestimonialsSection() {
+  const [testimonialIndex, setTestimonialIndex] = useState(0);
+
+  return (
+    <section
+      className="section"
+      aria-labelledby="testimonials-heading"
+      style={{ background: 'white', position: 'relative', overflow: 'hidden' }}
+    >
         {/* Subtle grid texture */}
         <div style={{ position: 'absolute', inset: 0, backgroundImage: 'radial-gradient(#E5E7EB 1px, transparent 1px)', backgroundSize: '28px 28px', opacity: 0.5, pointerEvents: 'none' }} />
         <div style={{ position: 'absolute', top: '10%', right: '0', width: '40%', height: '80%', background: 'radial-gradient(ellipse, rgba(37,99,235,0.04) 0%, transparent 65%)', pointerEvents: 'none' }} />
@@ -462,6 +463,5 @@ export function PortfolioSection() {
           </Reveal>
         </div>
       </section>
-    </>
   );
 }
