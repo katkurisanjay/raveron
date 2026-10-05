@@ -6,7 +6,6 @@ import { CoreCapabilitiesSection } from '@/components/sections/CoreCapabilitiesS
 import { EngineeringServicesSection, DomainExpertiseSection } from '@/components/sections/ServicesSections';
 import { WhyRaveronSection } from '@/components/sections/WhyRaveronSection';
 import { HowWeWorkSection } from '@/components/sections/HowWeWorkSection';
-import { QualitySection } from '@/components/sections/QualitySection';
 import { CareersPreviewSection } from '@/components/sections/CareersPreviewSection';
 import { CTASection } from '@/components/sections/CTASection';
 import { PortfolioSection } from '@/components/sections/PortfolioSection';
@@ -37,13 +36,12 @@ export default function HomePage() {
     <>
       <Hero />
       <CompanyIntroSection />
+      <PortfolioSection />
       <CoreCapabilitiesSection />
       <EngineeringServicesSection />
       <DomainExpertiseSection />
-      <PortfolioSection />
       <WhyRaveronSection />
       <HowWeWorkSection />
-      <QualitySection />
       <CareersPreviewSection />
       <CTASection />
     </>
