@@ -39,9 +39,9 @@ export default function HomePage() {
       <PortfolioSection />
       <EngineeringServicesSection />
       <DomainExpertiseSection />
-      <TestimonialsSection />
       <WhyRaveronSection />
       <HowWeWorkSection />
+      <TestimonialsSection />
       <CareersPreviewSection />
       <CTASection />
     </>
